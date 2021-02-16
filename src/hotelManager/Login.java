@@ -3,6 +3,8 @@ package hotelManager;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.*;
+import java.util.*;
 
 public class Login extends JFrame implements ActionListener {
 
@@ -44,6 +46,7 @@ public class Login extends JFrame implements ActionListener {
         btn1.setBackground(Color.BLACK);
         btn1.setForeground(Color.white);
         btn1.setBounds(40, 150, 120, 30);
+        btn1.addActionListener(this);
         add(btn1);
 
         btn2 = new JButton("Cancel");
@@ -72,9 +75,32 @@ public class Login extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (JOptionPane.showConfirmDialog(this, "Are you sure you want to close this window?", "Close Window?",
-                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
-            System.exit(0);
+        if (e.getSource() == btn1) {
+            String username = tf1.getText();
+            char[] pw = tf2.getPassword();
+            String password = new String(pw);
+            conn c = new conn();
+
+            String str = "select * from login where username = '" + username + "' and password = '" + password + "'";
+
+            try {
+                ResultSet rs = c.s.executeQuery(str);
+                if (rs.next()) {
+                    new Dashboard().setVisible(true);
+                    this.setVisible(false);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Invalid username and password");
+                    this.setVisible(true);
+                }
+            } catch (Exception err) {
+
+            }
+
+        } else if (e.getSource() == btn2) {
+            if (JOptionPane.showConfirmDialog(null, "Are you sure you want to close this window?", "Close Window?",
+                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+                System.exit(0);
+            }
         }
     }
 }
