@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class HotelManagementSystem extends JFrame {
+public class HotelManagementSystem extends JFrame implements ActionListener {
     /**
      *
      */
@@ -13,9 +13,9 @@ public class HotelManagementSystem extends JFrame {
     HotelManagementSystem() {
         setBounds(0, 100, 1366, 565); // ( (x, y), (width, height) ) = (setLocation, setSize)
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(new BorderLayout());
 
         // Background image
-        setLayout(new BorderLayout());
         JLabel background = new JLabel(new ImageIcon(ClassLoader.getSystemResource("hotelManager/icons/first.jpg")));
         add(background);
 
@@ -31,6 +31,7 @@ public class HotelManagementSystem extends JFrame {
         b1.setBackground(Color.white);
         b1.setForeground(Color.black);
         b1.setBounds(1150, 450, 150, 50);
+        b1.addActionListener(this);
         background.add(b1);
 
         setVisible(true); // Hien thi
@@ -54,5 +55,11 @@ public class HotelManagementSystem extends JFrame {
 
     public static void main(String[] args) throws Exception {
         new HotelManagementSystem();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        new Login().setVisible(true);
+        this.setVisible(false);
     }
 }
