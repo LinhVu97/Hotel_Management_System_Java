@@ -17,7 +17,7 @@ public class Login extends JFrame implements ActionListener {
     JPasswordField tf2;
     JButton btn1, btn2;
 
-    Login() {
+    public Login() {
         setBounds(250, 150, 600, 300);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);

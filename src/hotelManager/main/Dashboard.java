@@ -4,16 +4,23 @@ import javax.swing.*;
 
 import hotelManager.admin.AddEmployee;
 import hotelManager.admin.AddRooms;
+import hotelManager.management.Reception;
+import hotelManager.admin.AddDriver;
 
 import java.awt.*;
 import java.awt.event.*;
 
 public class Dashboard extends JFrame implements ActionListener {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
     JMenuBar menuBar;
     JMenu m1, m2;
     JMenuItem i1, i2, i3, i4;
 
-    Dashboard() {
+    public Dashboard() {
         setBounds(0, 0, 1950, 1020);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
@@ -73,13 +80,13 @@ public class Dashboard extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == i1) {
-            // Reception
+            new Reception().setVisible(true);
         } else if (e.getSource() == i2) {
             new AddEmployee().setVisible(true);
         } else if (e.getSource() == i3) {
             new AddRooms().setVisible(true);
         } else if (e.getSource() == i4) {
-            // Drivers
+            new AddDriver().setVisible(true);
         }
     }
 

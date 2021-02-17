@@ -16,6 +16,7 @@ public class AddRooms extends JFrame implements ActionListener {
         setBounds(200, 50, 1000, 500);
         setLayout(null);
         setDefaultCloseOperation(HIDE_ON_CLOSE);
+        setTitle("ADD ROOM");
 
         // Label
         JLabel AddRooms = new JLabel("Add Rooms");
