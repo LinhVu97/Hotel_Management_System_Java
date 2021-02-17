@@ -1,9 +1,10 @@
 package hotelManager.management;
 
-import javax.swing.*;
-
-import hotelManager.main.Dashboard;
 import hotelManager.main.Login;
+import hotelManager.management.reception.EmployeeInfo;
+import hotelManager.management.reception.ManagerInfo;
+
+import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -65,7 +66,7 @@ public class Reception extends JFrame {
         b4 = new JButton("All Employee Info");
         b4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                new EmployeeInfo().setVisible(true);
             }
         });
         b4.setBounds(10, 150, 200, 30);
@@ -89,7 +90,7 @@ public class Reception extends JFrame {
         b6 = new JButton("Manager Info");
         b6.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                new ManagerInfo().setVisible(true);
             }
         });
         b6.setBounds(10, 230, 200, 30);
