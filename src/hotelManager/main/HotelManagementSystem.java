@@ -1,4 +1,4 @@
-package hotelManager;
+package hotelManager.main;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +16,7 @@ public class HotelManagementSystem extends JFrame implements ActionListener {
         setLayout(new BorderLayout());
 
         // Background image
-        JLabel background = new JLabel(new ImageIcon(ClassLoader.getSystemResource("hotelManager/icons/first.jpg")));
+        JLabel background = new JLabel(new ImageIcon(ClassLoader.getSystemResource("icons/first.jpg")));
         add(background);
 
         // Label

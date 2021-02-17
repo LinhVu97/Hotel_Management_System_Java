@@ -1,13 +1,10 @@
-package hotelManager;
+package hotelManager.main;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
 import java.sql.*;
 
 public class conn {
     Connection c;
-    Statement s;
+    public Statement s;
 
     public conn() {
         try {

@@ -1,10 +1,9 @@
-package hotelManager;
+package hotelManager.main;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
-import java.util.*;
 
 public class Login extends JFrame implements ActionListener {
 
@@ -57,7 +56,7 @@ public class Login extends JFrame implements ActionListener {
         add(btn2);
 
         // Image
-        ImageIcon imgIcon = new ImageIcon(ClassLoader.getSystemResource("hotelManager/icons/second.jpg"));
+        ImageIcon imgIcon = new ImageIcon(ClassLoader.getSystemResource("icons/second.jpg"));
         Image img = imgIcon.getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT); // Transform Image
         ImageIcon newImg = new ImageIcon(img);
         JLabel lb3 = new JLabel(newImg);

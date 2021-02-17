@@ -1,10 +1,13 @@
-package hotelManager;
+package hotelManager.main;
 
 import javax.swing.*;
+
+import hotelManager.admin.AddEmployee;
+
 import java.awt.*;
 import java.awt.event.*;
 
-public class Dashboard extends JFrame {
+public class Dashboard extends JFrame implements ActionListener {
     JMenuBar menuBar;
     JMenu m1, m2;
     JMenuItem i1, i2, i3, i4;
@@ -32,6 +35,7 @@ public class Dashboard extends JFrame {
         menuBar.add(m2);
 
         i2 = new JMenuItem("ADD EMPLOYEE");
+        i2.addActionListener(this);
         m2.add(i2);
 
         i3 = new JMenuItem("ADD ROOMS");
@@ -41,7 +45,7 @@ public class Dashboard extends JFrame {
         m2.add(i4);
 
         // Image
-        ImageIcon imgIcon = new ImageIcon(ClassLoader.getSystemResource("hotelManager/icons/third.jpg"));
+        ImageIcon imgIcon = new ImageIcon(ClassLoader.getSystemResource("icons/third.jpg"));
         Image img = imgIcon.getImage().getScaledInstance(1950, 1000, Image.SCALE_DEFAULT); // Transform Image
         ImageIcon newImg = new ImageIcon(img);
         JLabel label = new JLabel(newImg);
@@ -60,6 +64,13 @@ public class Dashboard extends JFrame {
 
     public static void main(String[] args) throws Exception {
         new Dashboard().setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == i2) {
+            new AddEmployee().setVisible(true);
+        }
     }
 
 }
