@@ -17,7 +17,7 @@ public class AddEmployee extends JFrame implements ActionListener {
         setTitle("ADD EMPLOYEE DETAILS");
 
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        setBounds(100, 50, 990, 550);
+        setBounds(200, 50, 990, 550);
         getContentPane().setLayout(null);
 
         // Name

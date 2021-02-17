@@ -3,6 +3,7 @@ package hotelManager.main;
 import javax.swing.*;
 
 import hotelManager.admin.AddEmployee;
+import hotelManager.admin.AddRooms;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -27,6 +28,7 @@ public class Dashboard extends JFrame implements ActionListener {
         menuBar.add(m1);
 
         i1 = new JMenuItem("RECEPTION");
+        i1.addActionListener(this);
         m1.add(i1);
 
         // ADMIN
@@ -39,9 +41,11 @@ public class Dashboard extends JFrame implements ActionListener {
         m2.add(i2);
 
         i3 = new JMenuItem("ADD ROOMS");
+        i3.addActionListener(this);
         m2.add(i3);
 
         i4 = new JMenuItem("ADD DRIVERS");
+        i4.addActionListener(this);
         m2.add(i4);
 
         // Image
@@ -68,8 +72,14 @@ public class Dashboard extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == i2) {
+        if (e.getSource() == i1) {
+            // Reception
+        } else if (e.getSource() == i2) {
             new AddEmployee().setVisible(true);
+        } else if (e.getSource() == i3) {
+            new AddRooms().setVisible(true);
+        } else if (e.getSource() == i4) {
+            // Drivers
         }
     }
 
