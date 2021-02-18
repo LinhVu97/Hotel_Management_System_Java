@@ -1,12 +1,14 @@
 package hotelManager.management;
 
 import hotelManager.main.Login;
+import hotelManager.management.reception.AddCustomer;
+import hotelManager.management.reception.CustomerInfo;
 import hotelManager.management.reception.EmployeeInfo;
 import hotelManager.management.reception.ManagerInfo;
 import hotelManager.management.reception.Room;
+import hotelManager.management.reception.UpdateRoom;
 
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.event.*;
 
@@ -31,7 +33,7 @@ public class Reception extends JFrame {
         b1 = new JButton("New Custom Form");
         b1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                new AddCustomer().setVisible(true);
             }
         });
         b1.setBounds(10, 30, 200, 30);
@@ -79,7 +81,7 @@ public class Reception extends JFrame {
         b5 = new JButton("Customer Info");
         b5.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                new CustomerInfo().setVisible(true);
             }
         });
         b5.setBounds(10, 190, 200, 30);
@@ -127,7 +129,7 @@ public class Reception extends JFrame {
         b9 = new JButton("Update Room Status");
         b9.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                new UpdateRoom().setVisible(true);
             }
         });
         b9.setBounds(10, 350, 200, 30);
