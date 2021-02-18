@@ -3,6 +3,7 @@ package hotelManager.management;
 import hotelManager.main.Login;
 import hotelManager.management.reception.EmployeeInfo;
 import hotelManager.management.reception.ManagerInfo;
+import hotelManager.management.reception.Room;
 
 import javax.swing.*;
 
@@ -42,7 +43,7 @@ public class Reception extends JFrame {
         b2 = new JButton("Room");
         b2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                new Room().setVisible(true);
             }
         });
         b2.setBounds(10, 70, 200, 30);
