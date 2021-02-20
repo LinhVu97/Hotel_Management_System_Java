@@ -2,11 +2,14 @@ package hotelManager.management;
 
 import hotelManager.main.Login;
 import hotelManager.management.reception.AddCustomer;
+import hotelManager.management.reception.CheckOut;
 import hotelManager.management.reception.CustomerInfo;
 import hotelManager.management.reception.EmployeeInfo;
 import hotelManager.management.reception.ManagerInfo;
 import hotelManager.management.reception.Room;
+import hotelManager.management.reception.UpdateCheck;
 import hotelManager.management.reception.UpdateRoom;
+import hotelManager.management.reception.SearchRoom;
 
 import javax.swing.*;
 import java.awt.*;
@@ -105,7 +108,7 @@ public class Reception extends JFrame {
         b7 = new JButton("Check Out");
         b7.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                new CheckOut().setVisible(true);
             }
         });
         b7.setBounds(10, 270, 200, 30);
@@ -117,7 +120,7 @@ public class Reception extends JFrame {
         b8 = new JButton("Update Check Status");
         b8.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                new UpdateCheck().setVisible(true);
             }
         });
         b8.setBounds(10, 310, 200, 30);
@@ -153,7 +156,7 @@ public class Reception extends JFrame {
         b11 = new JButton("Search Room");
         b11.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                new SearchRoom().setVisible(true);
             }
         });
         b11.setBounds(10, 430, 200, 30);
