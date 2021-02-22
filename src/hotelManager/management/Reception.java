@@ -4,8 +4,10 @@ import hotelManager.main.Login;
 import hotelManager.management.reception.AddCustomer;
 import hotelManager.management.reception.CheckOut;
 import hotelManager.management.reception.CustomerInfo;
+import hotelManager.management.reception.Department;
 import hotelManager.management.reception.EmployeeInfo;
 import hotelManager.management.reception.ManagerInfo;
+import hotelManager.management.reception.PickUp;
 import hotelManager.management.reception.Room;
 import hotelManager.management.reception.UpdateCheck;
 import hotelManager.management.reception.UpdateRoom;
@@ -60,7 +62,7 @@ public class Reception extends JFrame {
         b3 = new JButton("Department");
         b3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                new Department().setVisible(true);
             }
         });
         b3.setBounds(10, 110, 200, 30);
@@ -144,7 +146,7 @@ public class Reception extends JFrame {
         b10 = new JButton("Pick up Service");
         b10.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                new PickUp().setVisible(true);
             }
         });
         b10.setBounds(10, 390, 200, 30);
